@@ -24,8 +24,9 @@ class WorldDateTest {
     Calendar calendar = Calendar.getInstance();
     calendar.set(2020, Calendar.APRIL, 30, 0, 0, 0);
 
-    Calendar actualCalendar = WorldDate.convertDataFromString("2020-04-30");
+    Calendar actualCalendar = WorldDate.convertDateFromString("2020-04-30");
 
     assertEquals(calendar.getTime().toString(), actualCalendar.getTime().toString());
   }
+
 }

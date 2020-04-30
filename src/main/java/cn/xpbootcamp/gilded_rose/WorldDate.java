@@ -9,7 +9,7 @@ import lombok.Data;
 
 @Data
 public class WorldDate {
-  public static Calendar convertDataFromString(String dateString) throws ParseException {
+  public static Calendar convertDateFromString(String dateString) throws ParseException {
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
     Date date = simpleDateFormat.parse(dateString);
 
