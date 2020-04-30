@@ -20,13 +20,20 @@ class WorldDateTest {
 
   @Test
   void shouldParseDateFromString() throws ParseException {
-    WorldDate worldDate = new WorldDate();
     Calendar calendar = Calendar.getInstance();
     calendar.set(2020, Calendar.APRIL, 30, 0, 0, 0);
 
     Calendar actualCalendar = WorldDate.convertDateFromString("2020-04-30");
 
     assertEquals(calendar.getTime().toString(), actualCalendar.getTime().toString());
+  }
+
+  @Test
+  void shouldCalDistanceBetweenTwoDateString() throws ParseException {
+    String dateOld = "2020-02-28";
+    String dateNew = "2020-03-02";
+    long distance = WorldDate.calDistanceBetweenTwoDateString(dateOld, dateNew);
+    assertEquals(3, distance);
   }
 
 }
