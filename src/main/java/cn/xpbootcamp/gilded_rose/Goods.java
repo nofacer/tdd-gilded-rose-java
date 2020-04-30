@@ -10,5 +10,5 @@ public interface Goods {
 
   void callQualityOfNewDay(String dateString) throws ParseException;
 
-  long calDeltaQuality(long sellIn, long dateDistance);
+  long calDeltaQuality(long sellIn, long dateDistance) throws ParseException;
 }

@@ -47,7 +47,7 @@ public class CommonGoods implements Goods {
   }
 
   @Override
-  public long calDeltaQuality(long sellIn, long dateDistance) {
+  public long calDeltaQuality(long sellIn, long dateDistance) throws ParseException {
     long deltaQuality;
     if (dateDistance <= sellIn) {
       deltaQuality = -1 * dateDistance;
