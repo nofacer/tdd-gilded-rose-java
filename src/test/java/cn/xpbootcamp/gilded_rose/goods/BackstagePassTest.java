@@ -20,6 +20,12 @@ class BackstagePassTest {
   void shouldBeZeroQualityIfOverShowDate() throws ParseException {
     backstagePass.updateInfo("2020-01-31");
     assertEquals(0, backstagePass.getCurrentQuality());
-
   }
+
+  @Test
+  void shouldIncreaseQualityBy1WhenMoreThan10DaysToShow() throws ParseException {
+    backstagePass.updateInfo("2020-01-20");
+    assertEquals(39, backstagePass.getCurrentQuality());
+  }
+
 }
