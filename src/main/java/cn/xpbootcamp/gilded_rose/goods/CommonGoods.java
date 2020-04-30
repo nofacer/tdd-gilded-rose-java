@@ -38,6 +38,7 @@ public class CommonGoods implements Goods {
   public void callQualityOfNewDay(String dateString) throws ParseException {
     long dateDistance = WorldDate.calDistanceBetweenTwoDateString(this.initDate, dateString);
     this.currentQuality = initQuality + calDeltaQuality(this.initSellIn, dateDistance);
+    this.currentQuality = this.currentQuality < 0 ? 0 : this.currentQuality;
   }
 
   @Override

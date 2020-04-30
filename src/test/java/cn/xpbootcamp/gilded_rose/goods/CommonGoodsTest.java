@@ -28,4 +28,11 @@ class CommonGoodsTest {
     assertEquals(6, commonGoods.getCurrentQuality());
     assertEquals(-2, commonGoods.getCurrentSellIn());
   }
+
+  @Test
+  void shouldNotLessThanZeroForQuality() throws ParseException {
+    commonGoods.updateInfo("2020-01-20");
+    assertEquals(0, commonGoods.getCurrentQuality());
+    assertEquals(-9, commonGoods.getCurrentSellIn());
+  }
 }
