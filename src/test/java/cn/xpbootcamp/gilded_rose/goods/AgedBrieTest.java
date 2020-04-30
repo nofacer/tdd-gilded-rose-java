@@ -31,6 +31,4 @@ class AgedBrieTest {
 
     assertEquals(50, agedBrie.getCurrentQuality());
   }
-
-
 }
