@@ -24,6 +24,9 @@ public class BackstagePass extends CommonGoods {
     if (daysToShow - dateDistance >= 5 && daysToShow - dateDistance < 10) {
       return (daysToShow - 10) + 2 * (dateDistance - (daysToShow - 10));
     }
+    if (daysToShow - dateDistance < 5) {
+      return (daysToShow - 10) + 2 * 5 + 3 * (dateDistance - (daysToShow - 5));
+    }
     return 0;
   }
 }

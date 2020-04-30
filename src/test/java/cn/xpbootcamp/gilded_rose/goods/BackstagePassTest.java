@@ -34,4 +34,9 @@ class BackstagePassTest {
     assertEquals(49, backstagePass.getCurrentQuality());
   }
 
+  @Test
+  void shouldIncreaseQualityBy3WhenLessThan5DaysToShow() throws ParseException {
+    backstagePass.updateInfo("2020-01-30");
+    assertEquals(64, backstagePass.getCurrentQuality());
+  }
 }
