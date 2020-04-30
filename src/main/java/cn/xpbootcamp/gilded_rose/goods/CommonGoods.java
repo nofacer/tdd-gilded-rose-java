@@ -39,6 +39,7 @@ public class CommonGoods implements Goods {
     long dateDistance = WorldDate.calDistanceBetweenTwoDateString(this.initDate, dateString);
     this.currentQuality = initQuality + calDeltaQuality(this.initSellIn, dateDistance);
     this.currentQuality = this.currentQuality < 0 ? 0 : this.currentQuality;
+    this.currentQuality = this.currentQuality > 50 ? 50 : this.currentQuality;
   }
 
   @Override

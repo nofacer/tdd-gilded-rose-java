@@ -22,7 +22,15 @@ class AgedBrieTest {
     agedBrie.updateInfo(newDay);
 
     assertEquals(49, agedBrie.getCurrentQuality());
-    assertEquals(-24, agedBrie.getCurrentSellIn());
   }
+
+  @Test
+  public void shouldNotLargeThanFiftyForQuality() throws ParseException {
+    String newDay = "2020-04-30";
+    agedBrie.updateInfo(newDay);
+
+    assertEquals(50, agedBrie.getCurrentQuality());
+  }
+
 
 }
