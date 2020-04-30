@@ -1,28 +1,14 @@
 package cn.xpbootcamp.gilded_rose;
 
-import lombok.Data;
+import java.text.ParseException;
 
-@Data
-public abstract class Goods {
+public interface Goods {
 
-  private String name;
-  private long initSellIn;
-  private long initQuality;
-  private long currentSellIn;
-  private long currentQuality;
-  private String initDate;
+  void updateInfo(String newDateString) throws ParseException;
 
-  public Goods(long initSellIn, long initQuality, String initDate) {
-    this.initSellIn = initSellIn;
-    this.initQuality = initQuality;
-    this.currentSellIn = initSellIn;
-    this.currentQuality = initQuality;
-    this.initDate = initDate;
-  }
+  void calSellInOfNewDay(String dateString) throws ParseException;
 
-  public void calSellInOfNewDay(String dateString) {
-  }
+  void callQualityOfNewDay(String dateString) throws ParseException;
 
-  public void callQualityOfNewDay() {
-  }
+  long calDeltaQuality(long sellIn, long dateDistance);
 }
