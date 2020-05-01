@@ -18,14 +18,29 @@ public class BackstagePass extends CommonGoods {
     if (dateDistance > daysToShow) {
       return -this.getInitQuality();
     }
-    if (daysToShow - dateDistance >= 10) {
-      return dateDistance;
+
+    if (daysToShow <= 5) {
+      return dateDistance * 3;
     }
-    if (daysToShow - dateDistance >= 5 && daysToShow - dateDistance < 10) {
-      return (daysToShow - 10) + 2 * (dateDistance - (daysToShow - 10));
+
+    if (daysToShow <= 10) {
+      if (daysToShow - dateDistance >= 5) {
+        return 2 * dateDistance;
+      } else {
+        return 2 * (daysToShow - 5) + 3 * (dateDistance - (daysToShow - 5));
+      }
     }
-    if (daysToShow - dateDistance < 5) {
-      return (daysToShow - 10) + 2 * 5 + 3 * (dateDistance - (daysToShow - 5));
+
+    if (daysToShow > 10) {
+      if (daysToShow - dateDistance >= 10) {
+        return dateDistance * 1;
+      }
+      if (daysToShow - dateDistance < 10 && daysToShow - dateDistance >= 5) {
+        return (daysToShow - 10) + 2 * (dateDistance - (daysToShow - 10));
+      }
+      if (daysToShow - dateDistance < 5) {
+        return (daysToShow - 10) + 2 * 5 + 3 * (dateDistance - (daysToShow - 5));
+      }
     }
     return 0;
   }
